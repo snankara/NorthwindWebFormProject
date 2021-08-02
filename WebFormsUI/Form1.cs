@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Abstract;
+using Business.DependencyResolvers.Ninject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,20 @@ namespace WebFormsUI
 {
     public partial class Form1 : Form
     {
+        private IProductService _productService;
+        private ICategoryService _categoryService;
+
         public Form1()
         {
             InitializeComponent();
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
+            _productService = InstanceFactory.GetInstance<IProductService>();
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
