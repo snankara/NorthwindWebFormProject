@@ -44,6 +44,12 @@ namespace WebFormsUI
             cbxCategoryIdUpdate.DisplayMember = "CategoryName";
             cbxCategoryIdUpdate.ValueMember = "CategoryId";
 
+            lbxCategory.DataSource = _categoryService.GetAll();
+            lbxCategory.DisplayMember = "CategoryName";
+            lbxCategory.ValueMember = "CategoryId";
+
+            lblCategoryCount.Text = lbxCategory.Items.Count.ToString();
+
         }
 
         private void LoadProducts()
@@ -127,6 +133,7 @@ namespace WebFormsUI
             tbxUnitPriceUpdate.Text = currentRow.Cells[3].Value.ToString();
             tbxQuantityPerUnitUpdate.Text = currentRow.Cells[4].Value.ToString();
             tbxStockUpdate.Text = currentRow.Cells[5].Value.ToString();
+            //tbxUpdateCategoryName.Text = currentRow.Cells[1].Displayed.ToString();
 
         }
 
@@ -145,6 +152,79 @@ namespace WebFormsUI
                 {
                     MessageBox.Show(exception.Message);
                 }
+            }
+        }
+
+        private void btnCategoryAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _categoryService.Add(new Category
+                {
+                    CategoryName = tbxNewCategoryName.Text
+                });
+                MessageBox.Show("Kategori Eklendi");
+                LoadCategories();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+
+        private void lbxCategory_Click(object sender, EventArgs e)
+        {
+            tbxUpdateCategoryName.Text = lbxCategory.Text;
+        }
+
+        private void btnCategoryUpdate_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbxUpdateCategoryName.Text))
+            {
+                try
+                {
+                    _categoryService.Update(new Category
+                    {
+                        CategoryId = Convert.ToInt32(lbxCategory.SelectedValue),
+                        CategoryName = tbxUpdateCategoryName.Text
+                    });
+                    MessageBox.Show("Kategori Güncellendi");
+                    tbxUpdateCategoryName.Text = "";
+                    LoadCategories();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Kategori Seçin !");
+            }
+        }
+
+        private void btnCategoryRemove_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbxUpdateCategoryName.Text))
+            {
+                try
+                {
+                    _categoryService.Delete(new Category { CategoryId = Convert.ToInt32(lbxCategory.SelectedValue) });
+                    MessageBox.Show("Kategori Silindi");
+                    tbxUpdateCategoryName.Text = "";
+                    LoadCategories();
+
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Kategori Seçin !");
             }
         }
     }

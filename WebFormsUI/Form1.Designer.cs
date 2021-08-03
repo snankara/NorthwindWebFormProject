@@ -63,12 +63,28 @@ namespace WebFormsUI
             this.label13 = new System.Windows.Forms.Label();
             this.gbxProductProccess = new System.Windows.Forms.GroupBox();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.gbxCategoryProccess = new System.Windows.Forms.GroupBox();
+            this.gbxCategoryUpdate = new System.Windows.Forms.GroupBox();
+            this.lblCategoryCount = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.lbxCategory = new System.Windows.Forms.ListBox();
+            this.btnCategoryUpdate = new System.Windows.Forms.Button();
+            this.tbxUpdateCategoryName = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.gbxCategoryAdd = new System.Windows.Forms.GroupBox();
+            this.btnCategoryAdd = new System.Windows.Forms.Button();
+            this.tbxNewCategoryName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.btnCategoryRemove = new System.Windows.Forms.Button();
             this.gbxCategory.SuspendLayout();
             this.gbxProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwProduct)).BeginInit();
             this.gbxProductAdd.SuspendLayout();
             this.gbxProductUpdate.SuspendLayout();
             this.gbxProductProccess.SuspendLayout();
+            this.gbxCategoryProccess.SuspendLayout();
+            this.gbxCategoryUpdate.SuspendLayout();
+            this.gbxCategoryAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxCategory
@@ -381,7 +397,7 @@ namespace WebFormsUI
             this.gbxProductProccess.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gbxProductProccess.Location = new System.Drawing.Point(17, 340);
             this.gbxProductProccess.Name = "gbxProductProccess";
-            this.gbxProductProccess.Size = new System.Drawing.Size(813, 204);
+            this.gbxProductProccess.Size = new System.Drawing.Size(813, 191);
             this.gbxProductProccess.TabIndex = 13;
             this.gbxProductProccess.TabStop = false;
             this.gbxProductProccess.Text = "Ürün İşlemleri";
@@ -392,15 +408,147 @@ namespace WebFormsUI
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 13;
-            this.btnRemove.Text = "Ürünü Sil";
+            this.btnRemove.Text = "Ürün Sil";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // gbxCategoryProccess
+            // 
+            this.gbxCategoryProccess.Controls.Add(this.gbxCategoryUpdate);
+            this.gbxCategoryProccess.Controls.Add(this.gbxCategoryAdd);
+            this.gbxCategoryProccess.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbxCategoryProccess.Location = new System.Drawing.Point(17, 569);
+            this.gbxCategoryProccess.Name = "gbxCategoryProccess";
+            this.gbxCategoryProccess.Size = new System.Drawing.Size(813, 189);
+            this.gbxCategoryProccess.TabIndex = 14;
+            this.gbxCategoryProccess.TabStop = false;
+            this.gbxCategoryProccess.Text = "Kategori İşlemleri";
+            // 
+            // gbxCategoryUpdate
+            // 
+            this.gbxCategoryUpdate.Controls.Add(this.lblCategoryCount);
+            this.gbxCategoryUpdate.Controls.Add(this.label15);
+            this.gbxCategoryUpdate.Controls.Add(this.lbxCategory);
+            this.gbxCategoryUpdate.Controls.Add(this.btnCategoryUpdate);
+            this.gbxCategoryUpdate.Controls.Add(this.tbxUpdateCategoryName);
+            this.gbxCategoryUpdate.Controls.Add(this.label14);
+            this.gbxCategoryUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbxCategoryUpdate.Location = new System.Drawing.Point(340, 39);
+            this.gbxCategoryUpdate.Name = "gbxCategoryUpdate";
+            this.gbxCategoryUpdate.Size = new System.Drawing.Size(463, 142);
+            this.gbxCategoryUpdate.TabIndex = 12;
+            this.gbxCategoryUpdate.TabStop = false;
+            this.gbxCategoryUpdate.Text = "Kategori Güncelle";
+            // 
+            // lblCategoryCount
+            // 
+            this.lblCategoryCount.AutoSize = true;
+            this.lblCategoryCount.Location = new System.Drawing.Point(275, 117);
+            this.lblCategoryCount.Name = "lblCategoryCount";
+            this.lblCategoryCount.Size = new System.Drawing.Size(13, 13);
+            this.lblCategoryCount.TabIndex = 15;
+            this.lblCategoryCount.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(285, 117);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(142, 13);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Adet Kategori Listeliyorsunuz";
+            // 
+            // lbxCategory
+            // 
+            this.lbxCategory.FormattingEnabled = true;
+            this.lbxCategory.Location = new System.Drawing.Point(269, 19);
+            this.lbxCategory.Name = "lbxCategory";
+            this.lbxCategory.Size = new System.Drawing.Size(175, 95);
+            this.lbxCategory.TabIndex = 13;
+            this.lbxCategory.Click += new System.EventHandler(this.lbxCategory_Click);
+            // 
+            // btnCategoryUpdate
+            // 
+            this.btnCategoryUpdate.Location = new System.Drawing.Point(99, 72);
+            this.btnCategoryUpdate.Name = "btnCategoryUpdate";
+            this.btnCategoryUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnCategoryUpdate.TabIndex = 11;
+            this.btnCategoryUpdate.Text = "Güncelle";
+            this.btnCategoryUpdate.UseVisualStyleBackColor = true;
+            this.btnCategoryUpdate.Click += new System.EventHandler(this.btnCategoryUpdate_Click);
+            // 
+            // tbxUpdateCategoryName
+            // 
+            this.tbxUpdateCategoryName.Location = new System.Drawing.Point(89, 27);
+            this.tbxUpdateCategoryName.Name = "tbxUpdateCategoryName";
+            this.tbxUpdateCategoryName.Size = new System.Drawing.Size(94, 20);
+            this.tbxUpdateCategoryName.TabIndex = 5;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(10, 30);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 13);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Kategori Adı :";
+            // 
+            // gbxCategoryAdd
+            // 
+            this.gbxCategoryAdd.Controls.Add(this.btnCategoryAdd);
+            this.gbxCategoryAdd.Controls.Add(this.tbxNewCategoryName);
+            this.gbxCategoryAdd.Controls.Add(this.label18);
+            this.gbxCategoryAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.gbxCategoryAdd.Location = new System.Drawing.Point(10, 39);
+            this.gbxCategoryAdd.Name = "gbxCategoryAdd";
+            this.gbxCategoryAdd.Size = new System.Drawing.Size(324, 142);
+            this.gbxCategoryAdd.TabIndex = 5;
+            this.gbxCategoryAdd.TabStop = false;
+            this.gbxCategoryAdd.Text = "Yeni Kategori Ekle";
+            // 
+            // btnCategoryAdd
+            // 
+            this.btnCategoryAdd.Location = new System.Drawing.Point(98, 72);
+            this.btnCategoryAdd.Name = "btnCategoryAdd";
+            this.btnCategoryAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnCategoryAdd.TabIndex = 11;
+            this.btnCategoryAdd.Text = "Ekle";
+            this.btnCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
+            // 
+            // tbxNewCategoryName
+            // 
+            this.tbxNewCategoryName.Location = new System.Drawing.Point(89, 27);
+            this.tbxNewCategoryName.Name = "tbxNewCategoryName";
+            this.tbxNewCategoryName.Size = new System.Drawing.Size(94, 20);
+            this.tbxNewCategoryName.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(10, 30);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(70, 13);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Kategori Adı :";
+            // 
+            // btnCategoryRemove
+            // 
+            this.btnCategoryRemove.Location = new System.Drawing.Point(745, 540);
+            this.btnCategoryRemove.Name = "btnCategoryRemove";
+            this.btnCategoryRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnCategoryRemove.TabIndex = 15;
+            this.btnCategoryRemove.Text = "Kategori Sil";
+            this.btnCategoryRemove.UseVisualStyleBackColor = true;
+            this.btnCategoryRemove.Click += new System.EventHandler(this.btnCategoryRemove_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 635);
+            this.ClientSize = new System.Drawing.Size(842, 780);
+            this.Controls.Add(this.btnCategoryRemove);
+            this.Controls.Add(this.gbxCategoryProccess);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.gbxProductProccess);
             this.Controls.Add(this.dgwProduct);
@@ -420,6 +568,11 @@ namespace WebFormsUI
             this.gbxProductUpdate.ResumeLayout(false);
             this.gbxProductUpdate.PerformLayout();
             this.gbxProductProccess.ResumeLayout(false);
+            this.gbxCategoryProccess.ResumeLayout(false);
+            this.gbxCategoryUpdate.ResumeLayout(false);
+            this.gbxCategoryUpdate.PerformLayout();
+            this.gbxCategoryAdd.ResumeLayout(false);
+            this.gbxCategoryAdd.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,6 +614,19 @@ namespace WebFormsUI
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.GroupBox gbxProductProccess;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.GroupBox gbxCategoryProccess;
+        private System.Windows.Forms.GroupBox gbxCategoryAdd;
+        private System.Windows.Forms.Button btnCategoryAdd;
+        private System.Windows.Forms.TextBox tbxNewCategoryName;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox gbxCategoryUpdate;
+        private System.Windows.Forms.Button btnCategoryUpdate;
+        private System.Windows.Forms.TextBox tbxUpdateCategoryName;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnCategoryRemove;
+        private System.Windows.Forms.ListBox lbxCategory;
+        private System.Windows.Forms.Label lblCategoryCount;
+        private System.Windows.Forms.Label label15;
     }
 }
 
