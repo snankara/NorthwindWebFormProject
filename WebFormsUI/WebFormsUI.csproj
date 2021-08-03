@@ -98,6 +98,14 @@
       <Project>{0b60a07f-cb71-4292-b30c-a70405309440}</Project>
       <Name>Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{99a37a04-1861-4d45-95df-33798676f3ad}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{57dba143-4de0-4049-a0ce-3d40203c2c26}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

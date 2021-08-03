@@ -40,7 +40,7 @@ namespace Business.Concrete
 
         public List<Product> GetProductsByProductName(string productName)
         {
-            return _productDal.GetAll(p => p.ProductName == productName);
+            return _productDal.GetAll(p => p.ProductName.ToLower().Contains(productName.ToLower()));
         }
 
         public void Update(Product product)
